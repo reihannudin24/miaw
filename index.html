@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>Kucing kecil untuk Jenni</title>
+<title>Miaww miawww</title>
 <style>
 *{box-sizing:border-box}
 body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#FBF3EA;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#444441}
@@ -206,7 +206,7 @@ var asleep=false,nom=false,inTub=false,fleeing=false,tired=0,fleeCd=0,pets=0,rub
 var G=352,x=300,y=G,vy=0,rot=0,sq=1,face=1,hop=0,drag=false,held=false,ptrDown=false,px=340,py=200,sx0=0,sy0=0,target=null,spd=1.2,t=0,edgeLock=false;
 var spinT=0,sitT=0,shakeT=0,want='',trN=0,trLock=false,cards=[],found=0,memLock=false,bfs=[],bfN=0;
 var ROOMS=['Halaman rumah','Ruang utama','Dapur','Kamar mandi'];
-var SIZE=[.55,.78,1],PITCH=[1.5,1.2,1],LBL=['anak kucing','kucing remaja','kucing dewasa'];
+var SIZE=[.55,.66,.77],PITCH=[1.5,1.2,1],LBL=['anak kucing','kucing remaja','kucing dewasa'];
 var CMD={lompat:'LOMPAT',putar:'PUTAR',duduk:'DUDUK'};
 var FOOD={ikan:['#85B7EB','Ikan segar, makanan favoritnya. '],susu:['#FFFFFF','Susu hangat, diseruput sampai habis. '],ayam:['#D98A2B','Ayam rebus, lahap banget makannya. '],keju:['#FAC775','Keju secuil, dikunyah pelan-pelan. '],wortel:['#EF9F27','Dia mengendus wortelnya dulu, lalu dimakan juga. ']};
 function say(s){msg.textContent=s}
@@ -274,7 +274,7 @@ if(q==='rub'&&ptrDown&&Math.abs(px-x)<70*S()+20&&Math.abs(py-(y-90*S()))<100*S()
 if(held&&!drag&&!inTub&&!nom&&!asleep&&!mini()&&q!=='pick'&&Math.abs(p.x-sx0)+Math.abs(p.y-sy0)>8){drag=true;target=null;edgeLock=px>640||px<40;cat.classList.add('k-lift');cat.style.cursor='grabbing';eyes('open');var f=P();tone([500*f,900*f],.25,'triangle',.1)}});
 function release(){ptrDown=false;if(drag){drag=false;vy=0;cat.classList.remove('k-lift');cat.style.cursor='grab';
 if(room===3&&q==='intub'&&x>350&&x<570){inTub=true;fleeing=false;x=455;y=G-8;sq=.8;eyes('sleep');noise(.4,700,'lowpass',.25);for(var i=0;i<4;i++)fl('b');setQ('soap','Byur. '+name+' pasrah di dalam bak. Sekarang tap sabun di rak sebelah kiri.')}
-else if(room===1&&q==='tobed'&&x>70&&x<240){x=150;y=G;asleep=true;eyes('sleep');show($('kZ'),true);amb();[523,440,392,440,349,392].forEach(function(n,i){tone([n,n],.7,'sine',.08,i*.45)});setQ('sleeping','Selamat tidur, '+name+'. Hari ini kamu ngerawat dia dengan baik banget. Kamu juga istirahat ya, Jenni.');$('kTomorrow').textContent=day<3?'Besok pagi':'Lihat akhir cerita';$('kTomorrow').style.display='inline-block'}}
+else if(room===1&&q==='tobed'&&x>70&&x<240){x=150;y=G;asleep=true;eyes('sleep');show($('kZ'),true);amb();[523,440,392,440,349,392].forEach(function(n,i){tone([n,n],.7,'sine',.08,i*.45)});setQ('sleeping','Selamat tidur, '+name+'. Hari ini kamu ngerawat dia dengan baik banget. Kamu juga istirahat ya, bee.');$('kTomorrow').textContent=day<3?'Besok pagi':'Lihat akhir cerita';$('kTomorrow').style.display='inline-block'}}
 else if(held)pet();held=false}
 window.addEventListener('pointerup',release);
 window.addEventListener('pointercancel',release);
@@ -298,7 +298,7 @@ requestAnimationFrame(frame)}
 setInterval(function(){if(!started||drag||asleep||inTub||nom||held||y<G||target!==null)return;if(q==='pick'||q==='eating'||q==='trick'||q==='mem')return;if(Math.random()<.5){spd=fleeing?3:1.2;target=90+Math.random()*500}},4500);
 setInterval(function(){if(asleep||nom||inTub||$('kEo').getAttribute('display')==='none')return;eyes('sleep');setTimeout(function(){if(!asleep&&!nom&&!inTub)eyes('open')},160)},4200);
 function ending(){asleep=false;show($('kZ'),false);eyes('happy');tod='pagi';x=340;y=G;target=null;q='end';setRoom(0);amb();hints();$('kStage').textContent=name+' · tamat';$('kTomorrow').textContent='Main lagi dari awal';chime();for(var i=0;i<12;i++)setTimeout(function(){fl('h')},i*180);meow(.4);setTimeout(function(){if(q==='end')eyes('open')},2600);
-say('Tiga hari berlalu. '+name+' yang dulu kedinginan di dalam kardus sekarang punya rumah, dan itu berkat kamu. Sama kayak dia, kamu juga pantas dirawat dan dikasih waktu istirahat. Makasih udah main, Jenni.')}
+say('Tiga hari berlalu. '+name+' sekarang udah gede, wangi, dan tetep benci mandi. Kalau lagi capek, mampir aja ke sini, dia selalu mau dielus. Semangat ya, bee.')}
 $('kTomorrow').addEventListener('click',function(){if(q==='end'){day=1;beginDay();meow(.2)}else if(day>=3){ending()}else{day++;beginDay();meow(.2);sq=1.25}});
 $('kNext').addEventListener('click',function(){if(step===0){step=1;show($('kRain'),false);show($('kPeek'),true);tone([900,1300,1150,800],.4,'triangle',.11);say('Kamu buka kardusnya pelan-pelan. Ada anak kucing oranye yang kedinginan, menatap kamu dengan mata bulatnya.')}else{step=2;$('kC0').style.display='none';$('kC1').style.display='flex';say('Kamu nggak tega ninggalin dia, jadi kamu bawa pulang. Sekarang dia butuh nama. Mau kamu panggil siapa?');$('kName').focus()}});
 function start(){var v=$('kName').value.trim();if(!v){$('kErr').textContent='Isi nama kucingnya dulu ya.';return}name=v;$('kName').blur();show($('kIntro'),false);show($('kGame'),true);$('kC1').style.display='none';$('kC2').style.display='flex';svg.style.touchAction='none';started=true;beginDay();y=140;meow(.3);requestAnimationFrame(frame)}
