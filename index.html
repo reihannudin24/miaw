@@ -6,7 +6,6 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title>Kucing kecil untuk Jenni</title>
-
 <style>
 *{box-sizing:border-box}
 body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#FBF3EA;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#444441}
@@ -42,15 +41,13 @@ input:focus{border-color:#D4537E}
 @keyframes kcloud{0%{transform:translateX(-30px)}100%{transform:translateX(50px)}}
 @keyframes krain{0%{transform:translateY(-20px)}100%{transform:translateY(20px)}}
 @keyframes khint{0%,100%{opacity:.35}50%{opacity:.9}}
+@keyframes krot{0%,25%{transform:rotate(0)}60%,100%{transform:rotate(-90deg)}}
 @media (prefers-reduced-motion:reduce){.k-tail,.k-z,.k-cl,.k-rain,.k-hint{animation:none}}
 #kRot{display:none}
 @media (orientation:portrait) and (max-width:600px){
+  html,body{overflow:hidden;height:100%}
   #kRot{display:flex;position:fixed;inset:0;z-index:10;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:24px;background:#FBF3EA;text-align:center;font-size:17px;line-height:1.5;color:#6B6459}
   #kRot svg{animation:krot 2.4s ease-in-out infinite}
-}
-@keyframes krot{0%,25%{transform:rotate(0)}60%,100%{transform:rotate(-90deg)}}
-@media (orientation:portrait) and (max-width:600px){
-  html,body{overflow:hidden;height:100%}
 }
 @media (orientation:landscape) and (max-height:540px){
   html,body{height:100%;overflow:hidden;overscroll-behavior:none}
@@ -73,7 +70,7 @@ input:focus{border-color:#D4537E}
 </style>
 </head>
 <body>
-    <div id="kRot">
+<div id="kRot">
   <svg width="72" height="72" viewBox="0 0 72 72" aria-hidden="true">
     <rect x="22" y="8" width="28" height="56" rx="6" fill="#FFFFFF" stroke="#D4537E" stroke-width="3"/>
     <circle cx="36" cy="56" r="2.5" fill="#D4537E"/>
@@ -82,7 +79,7 @@ input:focus{border-color:#D4537E}
 </div>
 <div id="app">
 <svg id="kSvg" width="100%" viewBox="0 0 680 420" role="img">
-<title>Cerita harian kucing kecil</title>
+<title>Cerita tiga hari kucing kecil</title>
 <g id="kIntro">
 <rect width="680" height="420" fill="#7F77DD"/>
 <rect x="30" y="130" width="120" height="200" rx="10" fill="#534AB7"/><rect x="170" y="80" width="100" height="250" rx="10" fill="#3C3489"/><rect x="440" y="110" width="110" height="220" rx="10" fill="#3C3489"/><rect x="570" y="160" width="90" height="170" rx="10" fill="#534AB7"/>
@@ -134,12 +131,11 @@ input:focus{border-color:#D4537E}
 <rect y="330" width="680" height="90" fill="#B5D4F4"/>
 <ellipse cx="230" cy="110" rx="46" ry="56" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="3"/>
 <rect x="50" y="220" width="120" height="10" rx="4" fill="#BA7517"/>
-<g id="kSoap" class="k-tap"><rect x="84" y="196" width="52" height="24" rx="10" fill="#F4C0D1" stroke="#D4537E" stroke-width="2"/><circle id="kSoapHint" class="k-hint" cx="110" cy="182" r="8" fill="#FAC775" display="none"/></g>
+<g id="kSoap" class="k-tap"><rect x="70" y="170" width="80" height="56" fill="transparent"/><rect x="84" y="196" width="52" height="24" rx="10" fill="#F4C0D1" stroke="#D4537E" stroke-width="2"/><circle id="kSoapHint" class="k-hint" cx="110" cy="182" r="8" fill="#FAC775" display="none"/></g>
 <rect x="330" y="268" width="250" height="94" rx="32" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="2"/>
-<g id="kFaucet" class="k-tap"><path d="M610 300 V226 H566 V244" fill="none" stroke="#888780" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><circle cx="610" cy="222" r="11" fill="#E24B4A"/><circle id="kFaHint" class="k-hint" cx="610" cy="196" r="8" fill="#FAC775" display="none"/></g>
+<g id="kFaucet" class="k-tap"><rect x="550" y="180" width="90" height="130" fill="transparent"/><path d="M610 300 V226 H566 V244" fill="none" stroke="#888780" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><circle cx="610" cy="222" r="11" fill="#E24B4A"/><circle id="kFaHint" class="k-hint" cx="610" cy="196" r="8" fill="#FAC775" display="none"/></g>
 <rect id="kStream" x="562" y="248" width="8" height="44" rx="4" fill="#85B7EB" display="none"/>
 </g>
-<g id="kBall" class="k-tap" display="none"><circle r="26" fill="transparent"/><circle r="15" fill="#D4537E"/><path d="M-12 -5 Q0 -14 12 -5 M-14 3 Q0 -6 14 3 M-10 10 Q0 3 10 10" fill="none" stroke="#FBEAF0" stroke-width="2"/></g>
 <ellipse id="kShadow" cx="340" cy="352" rx="40" ry="8" fill="#2C2C2A" opacity=".18"/>
 <g id="kCat"><g id="kIn">
 <path class="k-tail" d="M40 -28 C92 -26 98 -78 78 -98" fill="none" stroke="#EF9F27" stroke-width="16" stroke-linecap="round"/>
@@ -160,20 +156,31 @@ input:focus{border-color:#D4537E}
 </g>
 </g></g>
 <g id="kTubFront" display="none" pointer-events="none"><rect id="kWater" x="340" y="300" width="230" height="20" rx="8" fill="#85B7EB" display="none"/><rect x="330" y="312" width="250" height="50" rx="24" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="2"/></g>
+<g id="kBf"></g>
 <g id="kFx" pointer-events="none"></g>
+<g id="kTrick" display="none">
+<g class="k-tap k-tr" data-k="lompat" transform="translate(140,118)"><rect width="124" height="46" rx="23" fill="#FFFFFF" stroke="#D4537E" stroke-width="2"/><text x="62" y="29" text-anchor="middle" font-size="16" fill="#72243E">Lompat</text></g>
+<g class="k-tap k-tr" data-k="putar" transform="translate(278,118)"><rect width="124" height="46" rx="23" fill="#FFFFFF" stroke="#D4537E" stroke-width="2"/><text x="62" y="29" text-anchor="middle" font-size="16" fill="#72243E">Putar</text></g>
+<g class="k-tap k-tr" data-k="duduk" transform="translate(416,118)"><rect width="124" height="46" rx="23" fill="#FFFFFF" stroke="#D4537E" stroke-width="2"/><text x="62" y="29" text-anchor="middle" font-size="16" fill="#72243E">Duduk</text></g>
+</g>
 <g pointer-events="none"><rect x="14" y="14" width="150" height="28" rx="14" fill="#FFFFFF" opacity=".85"/><text id="kRoomLbl" x="89" y="33" text-anchor="middle" font-size="13" fill="#444441">Halaman rumah</text>
 <g id="kArR" class="k-hint"><circle cx="656" cy="210" r="16" fill="#FFFFFF"/><path d="M651 201 L661 210 L651 219" fill="none" stroke="#444441" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
 <g id="kArL" class="k-hint" display="none"><circle cx="24" cy="210" r="16" fill="#FFFFFF"/><path d="M29 201 L19 210 L29 219" fill="none" stroke="#444441" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g></g>
 <rect id="kNight" width="680" height="420" fill="#26215C" opacity="0" pointer-events="none"/>
 <g id="kFr" display="none">
 <rect width="680" height="420" fill="#2C2C2A" opacity=".5"/>
-<rect x="130" y="40" width="420" height="340" rx="18" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="2"/><rect x="150" y="60" width="380" height="300" rx="10" fill="#E6F1FB"/>
-<rect x="150" y="204" width="380" height="8" fill="#B5D4F4"/>
-<g class="k-it k-tap" data-f="ikan" transform="translate(220,140)"><rect x="-50" y="-56" width="100" height="112" fill="transparent"/><ellipse rx="28" ry="14" fill="#85B7EB"/><path d="M24 0 L44 -14 V14Z" fill="#378ADD"/><circle cx="-14" cy="-3" r="3" fill="#2C2C2A"/><text y="44" text-anchor="middle" font-size="13" fill="#444441">Ikan</text></g>
-<g class="k-it k-tap" data-f="susu" transform="translate(340,134)"><rect x="-50" y="-56" width="100" height="118" fill="transparent"/><rect x="-16" y="-24" width="32" height="48" rx="4" fill="#FFFFFF" stroke="#85B7EB" stroke-width="2"/><path d="M-16 -24 L0 -40 L16 -24Z" fill="#FFFFFF" stroke="#85B7EB" stroke-width="2"/><rect x="-16" y="-6" width="32" height="14" fill="#85B7EB"/><text y="50" text-anchor="middle" font-size="13" fill="#444441">Susu</text></g>
-<g class="k-it k-tap" data-f="ayam" transform="translate(460,140)"><rect x="-50" y="-56" width="100" height="112" fill="transparent"/><rect x="10" y="-4" width="30" height="8" rx="4" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="1.5"/><ellipse cx="-6" rx="24" ry="17" fill="#D98A2B"/><text y="44" text-anchor="middle" font-size="13" fill="#444441">Ayam</text></g>
-<g class="k-it k-tap" data-f="keju" transform="translate(280,286)"><rect x="-50" y="-56" width="100" height="112" fill="transparent"/><path d="M-28 16 L28 16 L28 -8 L-28 -22Z" fill="#FAC775" stroke="#EF9F27" stroke-width="2"/><circle cx="-8" cy="4" r="4" fill="#EF9F27"/><circle cx="14" cy="6" r="3" fill="#EF9F27"/><text y="44" text-anchor="middle" font-size="13" fill="#444441">Keju</text></g>
-<g class="k-it k-tap" data-f="wortel" transform="translate(400,286)"><rect x="-50" y="-56" width="100" height="112" fill="transparent"/><path d="M-30 12 L20 -14 L26 -2Z" fill="#EF9F27"/><path d="M22 -10 L36 -22 M24 -6 L40 -8" stroke="#639922" stroke-width="4" stroke-linecap="round"/><text y="44" text-anchor="middle" font-size="13" fill="#444441">Wortel</text></g>
+<rect x="130" y="70" width="420" height="320" rx="18" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="2"/><rect x="150" y="88" width="380" height="284" rx="10" fill="#E6F1FB"/>
+<rect x="150" y="226" width="380" height="8" fill="#B5D4F4"/>
+<g class="k-it k-tap" data-f="ikan" transform="translate(220,160)"><rect x="-50" y="-56" width="100" height="112" fill="transparent"/><ellipse rx="28" ry="14" fill="#85B7EB"/><path d="M24 0 L44 -14 V14Z" fill="#378ADD"/><circle cx="-14" cy="-3" r="3" fill="#2C2C2A"/><text y="44" text-anchor="middle" font-size="13" fill="#444441">Ikan</text></g>
+<g class="k-it k-tap" data-f="susu" transform="translate(340,154)"><rect x="-50" y="-56" width="100" height="118" fill="transparent"/><rect x="-16" y="-24" width="32" height="48" rx="4" fill="#FFFFFF" stroke="#85B7EB" stroke-width="2"/><path d="M-16 -24 L0 -40 L16 -24Z" fill="#FFFFFF" stroke="#85B7EB" stroke-width="2"/><rect x="-16" y="-6" width="32" height="14" fill="#85B7EB"/><text y="50" text-anchor="middle" font-size="13" fill="#444441">Susu</text></g>
+<g class="k-it k-tap" data-f="ayam" transform="translate(460,160)"><rect x="-50" y="-56" width="100" height="112" fill="transparent"/><rect x="10" y="-4" width="30" height="8" rx="4" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="1.5"/><ellipse cx="-6" rx="24" ry="17" fill="#D98A2B"/><text y="44" text-anchor="middle" font-size="13" fill="#444441">Ayam</text></g>
+<g class="k-it k-tap" data-f="keju" transform="translate(280,300)"><rect x="-50" y="-56" width="100" height="112" fill="transparent"/><path d="M-28 16 L28 16 L28 -8 L-28 -22Z" fill="#FAC775" stroke="#EF9F27" stroke-width="2"/><circle cx="-8" cy="4" r="4" fill="#EF9F27"/><circle cx="14" cy="6" r="3" fill="#EF9F27"/><text y="44" text-anchor="middle" font-size="13" fill="#444441">Keju</text></g>
+<g class="k-it k-tap" data-f="wortel" transform="translate(400,300)"><rect x="-50" y="-56" width="100" height="112" fill="transparent"/><path d="M-30 12 L20 -14 L26 -2Z" fill="#EF9F27"/><path d="M22 -10 L36 -22 M24 -6 L40 -8" stroke="#639922" stroke-width="4" stroke-linecap="round"/><text y="44" text-anchor="middle" font-size="13" fill="#444441">Wortel</text></g>
+</g>
+<g id="kMem" display="none">
+<rect width="680" height="420" fill="#2C2C2A" opacity=".5"/>
+<rect x="186" y="84" width="308" height="282" rx="18" fill="#FBF3EA" stroke="#E3CDB8" stroke-width="2"/>
+<g id="kCards"></g>
 </g>
 </g>
 </svg>
@@ -195,34 +202,64 @@ input:focus{border-color:#D4537E}
 var $=function(i){return document.getElementById(i)},NS='http://www.w3.org/2000/svg';
 var svg=$('kSvg'),cat=$('kCat'),inn=$('kIn'),msg=$('kMsg'),fx=$('kFx');
 var ac=null,sound=true,name='Mochi',day=1,q='',room=0,tod='pagi',step=0,started=false;
-var asleep=false,nom=false,inTub=false,fleeing=false,tired=0,fleeCd=0,pets=0,balls=0,rubs=0,lastPurr=0,lastH=0,happyT=null;
-var G=352,x=300,y=G,vy=0,rot=0,sq=1,face=1,hop=0,drag=false,held=false,ptrDown=false,px=340,py=200,sx0=0,sy0=0,target=null,spd=1.2,t=0,bx=400,bt=400,edgeLock=false;
+var asleep=false,nom=false,inTub=false,fleeing=false,tired=0,fleeCd=0,pets=0,rubs=0,lastPurr=0,lastH=0,happyT=null;
+var G=352,x=300,y=G,vy=0,rot=0,sq=1,face=1,hop=0,drag=false,held=false,ptrDown=false,px=340,py=200,sx0=0,sy0=0,target=null,spd=1.2,t=0,edgeLock=false;
+var spinT=0,sitT=0,shakeT=0,want='',trN=0,trLock=false,cards=[],found=0,memLock=false,bfs=[],bfN=0;
 var ROOMS=['Halaman rumah','Ruang utama','Dapur','Kamar mandi'];
+var SIZE=[.55,.78,1],PITCH=[1.5,1.2,1],LBL=['anak kucing','kucing remaja','kucing dewasa'];
+var CMD={lompat:'LOMPAT',putar:'PUTAR',duduk:'DUDUK'};
 var FOOD={ikan:['#85B7EB','Ikan segar, makanan favoritnya. '],susu:['#FFFFFF','Susu hangat, diseruput sampai habis. '],ayam:['#D98A2B','Ayam rebus, lahap banget makannya. '],keju:['#FAC775','Keju secuil, dikunyah pelan-pelan. '],wortel:['#EF9F27','Dia mengendus wortelnya dulu, lalu dimakan juga. ']};
 function say(s){msg.textContent=s}
 function show(e,v){e.setAttribute('display',v?'inline':'none')}
 function cl(v,a,b){return Math.max(a,Math.min(b,v))}
-function S(){return Math.min(1,.55+.09*(day-1))}
-function P(){return 1.5-(S()-.55)/.45*.5}
-function lbl(){return day<=2?'anak kucing':day<=4?'kucing remaja':'kucing dewasa'}
+function S(){return SIZE[day-1]}
+function P(){return PITCH[day-1]}
+function lbl(){return LBL[day-1]}
+function mini(){return q==='trick'||q==='mem'||q==='bf'}
 function A(){if(!sound)return null;if(!ac){var C=window.AudioContext||window.webkitAudioContext;if(!C)return null;ac=new C()}if(ac.state==='suspended')ac.resume();return ac}
 function tone(fs,dur,type,vol,delay){var c=A();if(!c)return;var s=c.currentTime+(delay||0),o=c.createOscillator(),g=c.createGain();o.type=type;o.frequency.setValueAtTime(fs[0],s);for(var i=1;i<fs.length;i++)o.frequency.linearRampToValueAtTime(fs[i],s+dur*i/(fs.length-1));g.gain.setValueAtTime(0,s);g.gain.linearRampToValueAtTime(vol,s+.04);g.gain.exponentialRampToValueAtTime(.001,s+dur);o.connect(g);g.connect(c.destination);o.start(s);o.stop(s+dur+.05)}
 function noise(dur,freq,type,vol,delay){var c=A();if(!c)return;var n=Math.floor(c.sampleRate*dur),b=c.createBuffer(1,n,c.sampleRate),a=b.getChannelData(0);for(var i=0;i<n;i++)a[i]=(Math.random()*2-1)*Math.sin(Math.PI*i/n);var s=c.createBufferSource(),f=c.createBiquadFilter(),g=c.createGain();s.buffer=b;f.type=type;f.frequency.value=freq;g.gain.value=vol;s.connect(f);f.connect(g);g.connect(c.destination);s.start(c.currentTime+(delay||0))}
 function purr(v){var c=A();if(!c)return;var s=c.currentTime,o=c.createOscillator(),f=c.createBiquadFilter(),g=c.createGain(),l=c.createOscillator(),lg=c.createGain();o.type='sawtooth';o.frequency.value=52*P();f.type='lowpass';f.frequency.value=260;l.frequency.value=23;lg.gain.value=v*.5;g.gain.setValueAtTime(0,s);g.gain.linearRampToValueAtTime(v,s+.2);g.gain.linearRampToValueAtTime(0,s+1.4);l.connect(lg);lg.connect(g.gain);o.connect(f);f.connect(g);g.connect(c.destination);o.start(s);l.start(s);o.stop(s+1.5);l.stop(s+1.5)}
 function meow(d){var p=P();tone([520*p,860*p,780*p,460*p],.5,'triangle',.12,d||0)}
+function chime(){[523,659,784,1047].forEach(function(f,i){tone([f,f],.5,'sine',.09,i*.14)})}
 function eyes(m){show($('kEo'),m==='open');show($('kEh'),m==='happy');show($('kEs'),m==='sleep')}
 function fl(kind){var s=S(),fxx=x+(Math.random()*110-55)*s,fy=y-(kind==='b'?80:150)*s+Math.random()*30*s,g=document.createElementNS(NS,'g'),e;if(kind==='b'){e=document.createElementNS(NS,'circle');e.setAttribute('r',String(Math.round(5+Math.random()*9)));e.setAttribute('fill','#FFFFFF');e.setAttribute('stroke','#85B7EB');e.setAttribute('stroke-width','1.5')}else{e=document.createElementNS(NS,'path');e.setAttribute('d','M0 8 C-14 -6 -7 -16 0 -6 C7 -16 14 -6 0 8Z');e.setAttribute('fill','#D4537E')}e.setAttribute('class','k-fl');g.setAttribute('transform','translate('+Math.round(fxx)+','+Math.round(fy)+')');g.appendChild(e);fx.appendChild(g);setTimeout(function(){g.remove()},1300)}
 function amb(){var n=$('kNight'),c={pagi:'#FAD9B5',siang:'#C7E3F2',sore:'#F5C4B3',malam:'#26215C'}[tod];Array.prototype.forEach.call(document.querySelectorAll('.k-win'),function(e){e.setAttribute('fill',c)});$('kSun').setAttribute('cy',tod==='siang'?'70':'190');show($('kSun'),tod!=='malam');show($('kMoon'),tod==='malam');show($('kStars'),tod==='malam');if(asleep){n.setAttribute('fill','#26215C');n.setAttribute('opacity','.5')}else if(tod==='pagi'){n.setAttribute('fill','#FAC775');n.setAttribute('opacity','.1')}else if(tod==='siang'){n.setAttribute('opacity','0')}else if(tod==='sore'){n.setAttribute('fill','#F0997B');n.setAttribute('opacity','.14')}else{n.setAttribute('fill','#26215C');n.setAttribute('opacity','.3')}}
-function status(){$('kStage').textContent='Hari ke-'+day+' · '+name+' · '+lbl()}
+function status(){$('kStage').textContent='Hari '+day+'/3 · '+name+' · '+lbl()}
 function hints(){show($('kFrHint'),q==='fridge');show($('kSoapHint'),q==='soap');show($('kFaHint'),q==='tap'||q==='rinse')}
 function setQ(n,s){q=n;hints();if(s)say(s)}
-function setRoom(n){room=n;for(var i=0;i<4;i++)show($('r'+i),i===n);show($('kTubFront'),n===3);show($('kBall'),n===0&&q==='ball');$('kRoomLbl').textContent=ROOMS[n];show($('kArR'),n<3);show($('kArL'),n>0);tone([300,500],.18,'sine',.06);
+function setRoom(n){room=n;for(var i=0;i<4;i++)show($('r'+i),i===n);show($('kTubFront'),n===3);$('kRoomLbl').textContent=ROOMS[n];show($('kArR'),n<3);show($('kArL'),n>0);tone([300,500],.18,'sine',.06);
 if(q==='gohome'){if(n===1)say('Ini ruang utama. Dapurnya ada di sebelah kanan, bawa '+name+' ke sana.');if(n===2)setQ('fridge','Sampai di dapur. Tap kulkasnya buat cari makanan.')}
 else if(q==='catch'&&n===3){tired=2;setQ('tap','Berhasil sampai kamar mandi. Nyalain dulu airnya: tap keran merah di kanan.')}
 else if(q==='tobed'){say(n===1?'Taruh '+name+' di kasur merah mudanya di sebelah kiri.':'Ruang utama ada di sebelah kiri.')}}
-function beginDay(){asleep=false;fleeing=false;inTub=false;pets=0;balls=0;tod='pagi';show($('kZ'),false);eyes('open');x=300;y=G;target=null;$('kTomorrow').style.display='none';amb();status();q='pet';setRoom(0);hints();say('Hari ke-'+day+'. Pagi yang cerah di halaman. '+name+' baru bangun, elus dia buat nyapa (tap 3 kali).')}
-function pet(){var now=Date.now();sq=.88;if(now-lastH>200){lastH=now;fl('h')}if(now-lastPurr>900){lastPurr=now;purr(asleep?.12:.22)}if(q==='rub'){rub(4);return}if(asleep)return;eyes('happy');clearTimeout(happyT);happyT=setTimeout(function(){if(!asleep&&!nom)eyes('open')},1200);if(q==='pet'){pets++;if(pets>=3){bx=cl(x+110,80,480);bt=bx;setQ('ball',name+' mendengkur seneng. Sekarang ajak main: tap bola benangnya biar gelinding.');show($('kBall'),room===0)}}}
-$('kBall').addEventListener('pointerdown',function(e){e.stopPropagation();if(q!=='ball')return;bt=bx<280?320+Math.random()*180:70+Math.random()*180;target=bt;spd=4;balls++;tone([300,620],.14,'triangle',.07);eyes('happy');if(balls>=3){q='wait';setTimeout(function(){show($('kBall'),false);spd=1.2;target=null;eyes('open');meow();tod='siang';amb();setQ('gohome','Habis main, '+name+' lapar. Tahan dan angkat dia, lalu bawa ke ujung kanan buat masuk rumah.')},1700)}});
+function clearMini(){show($('kTrick'),false);show($('kMem'),false);bfs.forEach(function(b){b.g.remove()});bfs=[]}
+function beginDay(){asleep=false;fleeing=false;inTub=false;nom=false;pets=0;tod='pagi';clearMini();show($('kZ'),false);show($('kBowl'),false);show($('kWater'),false);show($('kSoap'),true);$('kFoam').setAttribute('opacity','0');eyes('open');x=300;y=G;target=null;spd=1.2;$('kTomorrow').style.display='none';amb();status();q='pet';setRoom(0);hints();say('Hari ke-'+day+' dari 3. '+(day>1?name+' udah tumbuh jadi '+lbl()+'. ':'Pagi yang cerah di halaman. ')+'Elus dia buat nyapa (tap 3 kali).')}
+function endMini(){clearMini();eyes('open');tod='siang';amb();setQ('gohome','Habis main, '+name+' lapar. Tahan dan angkat dia, lalu bawa ke ujung kanan buat masuk rumah.')}
+function startMini(){target=null;if(day===1)startTrick();else if(day===2)startMem();else startBf()}
+function pet(){var now=Date.now();sq=.88;if(now-lastH>200){lastH=now;fl('h')}if(now-lastPurr>900){lastPurr=now;purr(asleep?.12:.22)}if(q==='rub'){rub(4);return}if(asleep)return;eyes('happy');clearTimeout(happyT);happyT=setTimeout(function(){if(!asleep&&!nom)eyes('open')},1200);if(q==='pet'){pets++;if(pets>=3)startMini()}}
+
+function startTrick(){trN=0;trLock=false;want='';x=340;show($('kTrick'),true);q='trick';hints();nextTrick()}
+function nextTrick(){var ks=['lompat','putar','duduk'],k;do{k=ks[Math.floor(Math.random()*3)]}while(k===want);want=k;say('Waktunya main: ajarin '+name+' trik ('+(trN+1)+'/4). Tap tombol '+CMD[k]+'.')}
+Array.prototype.forEach.call(document.querySelectorAll('.k-tr'),function(g){g.addEventListener('pointerdown',function(e){e.stopPropagation();if(q!=='trick'||trLock)return;var k=g.getAttribute('data-k');if(k!==want){shakeT=14;tone([260,180],.2,'triangle',.08);say('Bukan yang itu. '+name+' nungguin tombol '+CMD[want]+'.');return}
+trLock=true;trN++;if(k==='lompat'){y=G-1;vy=-13}else if(k==='putar'){spinT=30}else{sitT=45}eyes('happy');fl('h');fl('h');tone([600,900],.18,'sine',.09);say('Pinter! '+name+' bisa '+k+'.');
+setTimeout(function(){trLock=false;eyes('open');if(trN>=4){meow();endMini()}else nextTrick()},1200)})});
+
+(function(){var box=$('kCards');for(var i=0;i<9;i++){(function(i){var g=document.createElementNS(NS,'g');g.setAttribute('class','k-tap');g.setAttribute('transform','translate('+(204+(i%3)*94)+','+(100+Math.floor(i/3)*86)+')');
+g.innerHTML='<rect width="84" height="74" rx="12" fill="#FFF4E3" stroke="#E3CDB8" stroke-width="2"/><g class="f"><ellipse cx="38" cy="37" rx="20" ry="11" fill="#85B7EB"/><path d="M54 37 L70 26 V48Z" fill="#378ADD"/><circle cx="28" cy="34" r="2.5" fill="#2C2C2A"/></g><g class="b"><circle cx="40" cy="43" r="17" fill="#444441"/><path d="M50 29 Q58 19 64 23" fill="none" stroke="#854F0B" stroke-width="3" stroke-linecap="round"/><circle cx="65" cy="22" r="4" fill="#EF9F27"/></g><g class="c"><rect width="84" height="74" rx="12" fill="#F4C0D1" stroke="#D4537E" stroke-width="2"/><circle cx="42" cy="45" r="9" fill="#D4537E"/><circle cx="27" cy="31" r="5" fill="#D4537E"/><circle cx="42" cy="24" r="5" fill="#D4537E"/><circle cx="57" cy="31" r="5" fill="#D4537E"/></g>';
+box.appendChild(g);var c={g:g,bomb:false,open:false};cards.push(c);g.addEventListener('pointerdown',function(e){e.stopPropagation();tapCard(c)})})(i)}})();
+function drawCard(c,open){c.open=open;show(c.g.querySelector('.c'),!open);show(c.g.querySelector('.f'),!c.bomb);show(c.g.querySelector('.b'),c.bomb)}
+function startMem(){var idx=[0,1,2,3,4,5,6,7,8].sort(function(){return Math.random()-.5});cards.forEach(function(c,i){c.bomb=idx.indexOf(i)<3});show($('kMem'),true);q='mem';hints();reveal(true)}
+function reveal(first){memLock=true;found=0;cards.forEach(function(c){drawCard(c,true)});say((first?'Waktunya main tebak kartu. ':'')+'Hafalin dulu: enam kartu isinya ikan, tiga isinya bom mainan.');setTimeout(function(){if(q!=='mem')return;cards.forEach(function(c){drawCard(c,false)});memLock=false;say('Sekarang buka semua kartu ikan buat '+name+'. Jangan sampai kena bom.')},3200)}
+function tapCard(c){if(q!=='mem'||memLock||c.open)return;drawCard(c,true);if(c.bomb){memLock=true;noise(.5,220,'lowpass',.5);tone([200,60],.4,'sawtooth',.09);say('Duar! Itu bom mainan. Nggak apa-apa, lihat lagi posisinya ya.');setTimeout(function(){if(q==='mem')reveal(false)},1400)}
+else{found++;tone([560+found*60,860+found*60],.15,'sine',.08);if(found>=6){memLock=true;chime();say('Hebat, semua ikannya ketemu tanpa kena bom!');setTimeout(function(){eyes('happy');meow();fl('h');fl('h');endMini()},1300)}else say('Ikan ke-'+found+' dari 6. Lanjut, hati-hati bomnya.')}}
+
+function startBf(){var cols=['#D4537E','#7F77DD','#EF9F27','#378ADD','#D85A30'];bfN=0;bfs=[];for(var i=0;i<5;i++){(function(i){var g=document.createElementNS(NS,'g');g.setAttribute('class','k-tap');
+g.innerHTML='<circle r="30" fill="transparent"/><ellipse cx="-9" cy="-4" rx="10" ry="13" fill="'+cols[i]+'"/><ellipse cx="9" cy="-4" rx="10" ry="13" fill="'+cols[i]+'"/><ellipse cx="-7" cy="9" rx="7" ry="8" fill="'+cols[i]+'"/><ellipse cx="7" cy="9" rx="7" ry="8" fill="'+cols[i]+'"/><rect x="-2" y="-12" width="4" height="26" rx="2" fill="#444441"/>';
+$('kBf').appendChild(g);var b={g:g,cx:110+i*105,cy:160+Math.random()*80,a:.012+Math.random()*.01,b:.017+Math.random()*.01,ph:Math.random()*6,alive:true};bfs.push(b);
+g.addEventListener('pointerdown',function(e){e.stopPropagation();if(q!=='bf'||!b.alive)return;b.alive=false;g.remove();bfN++;tone([700+bfN*80,1100+bfN*80],.18,'sine',.08);eyes('happy');if(y>=G){y=G-1;vy=-10}fl('h');
+if(bfN>=5){q='wait';chime();say('Semua kupu-kupunya ketangkap. '+name+' loncat kegirangan.');setTimeout(function(){meow();endMini()},1300)}else say('Kupu-kupu ke-'+bfN+' dari 5. Masih ada yang terbang.')})})(i)}
+q='bf';hints();say('Waktunya main: ada 5 kupu-kupu di taman. Tap semuanya buat '+name+'.')}
+
 $('kFridge').addEventListener('pointerdown',function(){if(q==='fridge'){show($('kFr'),true);tone([200,320],.2,'sine',.08);setQ('pick','Kulkasnya kebuka. Ada ikan, susu, ayam, keju, dan wortel. Pilih satu buat '+name+'.')}else if(q!=='pick')say('Kulkasnya dingin dan penuh makanan.')});
 Array.prototype.forEach.call(document.querySelectorAll('.k-it'),function(g){g.addEventListener('pointerdown',function(e){e.stopPropagation();if(q!=='pick')return;var f=FOOD[g.getAttribute('data-f')];show($('kFr'),false);$('kFood').setAttribute('fill',f[0]);show($('kBowl'),true);setQ('eating',f[1]+'Nyam nyam...');spd=3;target=268;tone([600,800],.15,'sine',.07);setTimeout(function(){target=null;face=1;nom=true;eyes('happy');for(var i=0;i<6;i++)noise(.07,1400,'bandpass',.3,i*.35)},900);setTimeout(function(){nom=false;show($('kBowl'),false);eyes('open');meow();fl('h');tod='sore';amb();fleeing=true;tired=0;setQ('catch','Kenyang. Tapi mukanya belepotan, waktunya mandi... eh, '+name+' kabur! Tangkap dia, lalu bawa ke kanan ke kamar mandi.')},3600)})});
 $('kFaucet').addEventListener('pointerdown',function(){if(q==='tap'){show($('kStream'),true);show($('kWater'),true);for(var i=0;i<3;i++)noise(.6,900,'lowpass',.2,i*.5);setTimeout(function(){show($('kStream'),false)},1600);setQ('intub','Airnya udah hangat. Sekarang tangkap '+name+' dan taruh di dalam bak.')}else if(q==='rinse'){q='wait';hints();show($('kStream'),true);for(var j=0;j<3;j++)noise(.6,900,'lowpass',.2,j*.5);$('kFoam').setAttribute('opacity','0');say('Byurrr... busanya luruh semua.');setTimeout(function(){show($('kStream'),false);show($('kWater'),false);show($('kSoap'),true);inTub=false;x=250;y=G-70;vy=-6;sq=1.2;eyes('open');meow();for(var i=0;i<5;i++)setTimeout(function(){fl('h')},i*120);tod='malam';amb();setQ('tobed',name+' sekarang bersih dan wangi. Udah malam, bawa dia ke kasurnya di ruang utama (ke kiri dua kali).')},1900)}else say('Kerannya masih mati.')});
@@ -234,31 +271,37 @@ svg.addEventListener('pointerdown',function(e){var p=pt(e);px=p.x;py=p.y;ptrDown
 cat.addEventListener('pointerdown',function(e){e.preventDefault();var p=pt(e);px=p.x;py=p.y;if(fleeing&&tired<3&&y>=G){dodge();return}held=true;sx0=p.x;sy0=p.y});
 window.addEventListener('pointermove',function(e){if(!started)return;var p=pt(e);px=p.x;py=p.y;
 if(q==='rub'&&ptrDown&&Math.abs(px-x)<70*S()+20&&Math.abs(py-(y-90*S()))<100*S()+20){rub(1);return}
-if(held&&!drag&&!inTub&&!nom&&!asleep&&q!=='pick'&&Math.abs(p.x-sx0)+Math.abs(p.y-sy0)>8){drag=true;target=null;edgeLock=px>560||px<120;cat.classList.add('k-lift');cat.style.cursor='grabbing';eyes('open');var f=P();tone([500*f,900*f],.25,'triangle',.1)}});
-window.addEventListener('pointerup',function(){ptrDown=false;if(drag){drag=false;vy=0;cat.classList.remove('k-lift');cat.style.cursor='grab';
+if(held&&!drag&&!inTub&&!nom&&!asleep&&!mini()&&q!=='pick'&&Math.abs(p.x-sx0)+Math.abs(p.y-sy0)>8){drag=true;target=null;edgeLock=px>640||px<40;cat.classList.add('k-lift');cat.style.cursor='grabbing';eyes('open');var f=P();tone([500*f,900*f],.25,'triangle',.1)}});
+function release(){ptrDown=false;if(drag){drag=false;vy=0;cat.classList.remove('k-lift');cat.style.cursor='grab';
 if(room===3&&q==='intub'&&x>350&&x<570){inTub=true;fleeing=false;x=455;y=G-8;sq=.8;eyes('sleep');noise(.4,700,'lowpass',.25);for(var i=0;i<4;i++)fl('b');setQ('soap','Byur. '+name+' pasrah di dalam bak. Sekarang tap sabun di rak sebelah kiri.')}
-else if(room===1&&q==='tobed'&&x>70&&x<240){x=150;y=G;asleep=true;eyes('sleep');show($('kZ'),true);amb();[523,440,392,440,349,392].forEach(function(n,i){tone([n,n],.7,'sine',.08,i*.45)});setQ('sleeping','Selamat tidur, '+name+'. Hari ini kamu ngerawat dia dengan baik banget. Kamu juga istirahat ya, Jenni.');$('kTomorrow').style.display='inline-block'}}
-else if(held)pet();held=false});
-function frame(){t++;var s=S(),gr=inTub?G-8:G;
+else if(room===1&&q==='tobed'&&x>70&&x<240){x=150;y=G;asleep=true;eyes('sleep');show($('kZ'),true);amb();[523,440,392,440,349,392].forEach(function(n,i){tone([n,n],.7,'sine',.08,i*.45)});setQ('sleeping','Selamat tidur, '+name+'. Hari ini kamu ngerawat dia dengan baik banget. Kamu juga istirahat ya, Jenni.');$('kTomorrow').textContent=day<3?'Besok pagi':'Lihat akhir cerita';$('kTomorrow').style.display='inline-block'}}
+else if(held)pet();held=false}
+window.addEventListener('pointerup',release);
+window.addEventListener('pointercancel',release);
+function frame(){t++;var s=S(),gr=inTub?G-8:G,spin=0;
 if(drag){var nx=x+(cl(px,50,630)-x)*.3,ny=y+(cl(py+118*s,150*s+20,G)-y)*.3,dv=nx-x;x=nx;y=ny;rot+=(cl(-dv*2.4,-28,28)-rot)*.2;hop=0;
-if(edgeLock){if(px>130&&px<550)edgeLock=false}else if(px>640&&room<3){setRoom(room+1);x=90;edgeLock=true}else if(px<40&&room>0){setRoom(room-1);x=590;edgeLock=true}}
+if(edgeLock){if(px>90&&px<590)edgeLock=false}else if(px>640&&room<3){setRoom(room+1);x=90;edgeLock=true}else if(px<40&&room>0){setRoom(room-1);x=590;edgeLock=true}}
 else{if(y<gr){vy+=1.1;y+=vy;if(y>=gr){y=gr;if(vy>5){sq=.68;tone([220,110],.16,'sine',.12)}vy=0}}
-else if(target!==null&&!asleep&&!inTub){var d=target-x;if(Math.abs(d)<5){target=null;hop=0;if(!fleeing&&q!=='ball'&&q!=='eating')spd=1.2}else{face=d>0?1:-1;x+=face*Math.min(spd,Math.abs(d));hop=Math.abs(Math.sin(t*.28))*(spd>3?16:8)}}else hop=0;
+else if(target!==null&&!asleep&&!inTub){var d=target-x;if(Math.abs(d)<5){target=null;hop=0;if(!fleeing&&q!=='eating')spd=1.2}else{face=d>0?1:-1;x+=face*Math.min(spd,Math.abs(d));hop=Math.abs(Math.sin(t*.28))*(spd>3?16:8)}}else hop=0;
 if(fleeing&&y>=gr&&tired<5&&t>fleeCd&&Math.abs(px-x)<110&&Math.abs(py-(y-70*s))<130)dodge();
 rot+=(0-rot)*.2}
+if(shakeT>0){rot=Math.sin(shakeT*1.3)*10;shakeT--}
+if(spinT>0){spin=(30-spinT)/30*360;spinT--}
 sq+=(1-sq)*.14;
-var br=1+Math.sin(t*.05)*.015,sy=sq*br*(asleep?.86:1)*(nom?1+Math.sin(t*.5)*.05:1);
-cat.setAttribute('transform','translate('+x.toFixed(1)+','+(y-hop).toFixed(1)+') rotate('+rot.toFixed(1)+',0,'+(-118*s).toFixed(1)+')');
+var br=1+Math.sin(t*.05)*.015,sy=sq*br*(asleep?.86:1)*(nom?1+Math.sin(t*.5)*.05:1)*(sitT>0?.72:1);if(sitT>0)sitT--;
+cat.setAttribute('transform','translate('+x.toFixed(1)+','+(y-hop).toFixed(1)+') rotate('+(rot+spin).toFixed(1)+',0,'+(-(spin?60:118)*s).toFixed(1)+')');
 inn.setAttribute('transform','scale('+(s*(2-sq)*face).toFixed(3)+','+(s*sy).toFixed(3)+')');
 var sh=$('kShadow'),k=cl(1-(G-y+hop)/260,.3,1);sh.setAttribute('cx',x.toFixed(1));sh.setAttribute('rx',(44*s*k).toFixed(1));show(sh,!inTub);
 var ex=px-x,ey=py-(y-124*s),el=Math.sqrt(ex*ex+ey*ey)||1;$('kPup').setAttribute('transform','translate('+(ex/el*3*face).toFixed(1)+','+(ey/el*3).toFixed(1)+')');
-if(q==='ball'||q==='wait'){bx+=(bt-bx)*.08;$('kBall').setAttribute('transform','translate('+bx.toFixed(1)+','+(G-12-Math.abs(Math.sin(bx*.05))*10).toFixed(1)+') rotate('+(bx*3).toFixed(0)+')')}
+for(var i=0;i<bfs.length;i++){var b=bfs[i];if(b.alive)b.g.setAttribute('transform','translate('+(b.cx+Math.sin(t*b.a+b.ph)*90).toFixed(1)+','+(b.cy+Math.cos(t*b.b+b.ph)*45).toFixed(1)+') scale('+(.45+.55*Math.abs(Math.sin(t*.25+b.ph))).toFixed(2)+',1)')}
 requestAnimationFrame(frame)}
-setInterval(function(){if(!started||drag||asleep||inTub||nom||held||y<G||target!==null)return;if(q==='pick'||q==='eating'||q==='ball')return;if(Math.random()<.5){spd=fleeing?3:1.2;target=90+Math.random()*500}},4500);
+setInterval(function(){if(!started||drag||asleep||inTub||nom||held||y<G||target!==null)return;if(q==='pick'||q==='eating'||q==='trick'||q==='mem')return;if(Math.random()<.5){spd=fleeing?3:1.2;target=90+Math.random()*500}},4500);
 setInterval(function(){if(asleep||nom||inTub||$('kEo').getAttribute('display')==='none')return;eyes('sleep');setTimeout(function(){if(!asleep&&!nom&&!inTub)eyes('open')},160)},4200);
-$('kTomorrow').addEventListener('click',function(){var before=lbl();day++;beginDay();meow(.2);sq=1.25;if(lbl()!==before)say('Hari ke-'+day+'. Lihat, '+name+' udah tumbuh jadi '+lbl()+'. Elus dia buat nyapa (tap 3 kali).')});
+function ending(){asleep=false;show($('kZ'),false);eyes('happy');tod='pagi';x=340;y=G;target=null;q='end';setRoom(0);amb();hints();$('kStage').textContent=name+' · tamat';$('kTomorrow').textContent='Main lagi dari awal';chime();for(var i=0;i<12;i++)setTimeout(function(){fl('h')},i*180);meow(.4);setTimeout(function(){if(q==='end')eyes('open')},2600);
+say('Tiga hari berlalu. '+name+' yang dulu kedinginan di dalam kardus sekarang punya rumah, dan itu berkat kamu. Sama kayak dia, kamu juga pantas dirawat dan dikasih waktu istirahat. Makasih udah main, Jenni.')}
+$('kTomorrow').addEventListener('click',function(){if(q==='end'){day=1;beginDay();meow(.2)}else if(day>=3){ending()}else{day++;beginDay();meow(.2);sq=1.25}});
 $('kNext').addEventListener('click',function(){if(step===0){step=1;show($('kRain'),false);show($('kPeek'),true);tone([900,1300,1150,800],.4,'triangle',.11);say('Kamu buka kardusnya pelan-pelan. Ada anak kucing oranye yang kedinginan, menatap kamu dengan mata bulatnya.')}else{step=2;$('kC0').style.display='none';$('kC1').style.display='flex';say('Kamu nggak tega ninggalin dia, jadi kamu bawa pulang. Sekarang dia butuh nama. Mau kamu panggil siapa?');$('kName').focus()}});
-function start(){var v=$('kName').value.trim();if(!v){$('kErr').textContent='Isi nama kucingnya dulu ya.';return}name=v;show($('kIntro'),false);show($('kGame'),true);$('kC1').style.display='none';$('kC2').style.display='flex';svg.style.touchAction='none';started=true;beginDay();y=140;meow(.3);requestAnimationFrame(frame)}
+function start(){var v=$('kName').value.trim();if(!v){$('kErr').textContent='Isi nama kucingnya dulu ya.';return}name=v;$('kName').blur();show($('kIntro'),false);show($('kGame'),true);$('kC1').style.display='none';$('kC2').style.display='flex';svg.style.touchAction='none';started=true;beginDay();y=140;meow(.3);requestAnimationFrame(frame)}
 $('kNameOk').addEventListener('click',start);
 $('kName').addEventListener('input',function(){$('kErr').textContent=''});
 $('kName').addEventListener('keydown',function(e){if(e.key==='Enter')start()});
